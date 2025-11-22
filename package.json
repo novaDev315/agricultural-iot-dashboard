@@ -1,0 +1,32 @@
+{
+  "name": "agricultural-iot-dashboard",
+  "version": "1.0.0",
+  "description": "Intelligent agricultural IoT platform for monitoring and automation",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:web\"",
+    "dev:api": "npm run dev -w @agri-iot/api",
+    "dev:web": "npm run dev -w @agri-iot/web",
+    "build": "npm run build -w @agri-iot/shared && npm run build -w @agri-iot/api && npm run build -w @agri-iot/web",
+    "build:api": "npm run build -w @agri-iot/api",
+    "build:web": "npm run build -w @agri-iot/web",
+    "start:api": "npm run start:prod -w @agri-iot/api",
+    "start:web": "npm run start -w @agri-iot/web",
+    "lint": "npm run lint --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "db:migrate": "npm run migration:run -w @agri-iot/api",
+    "db:seed": "npm run seed -w @agri-iot/api",
+    "simulator": "npm run simulator -w @agri-iot/api"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
