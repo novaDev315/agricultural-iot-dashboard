@@ -14,7 +14,10 @@ import {
   Sprout,
   Map,
   Cpu,
-  CloudSun
+  CloudSun,
+  FileText,
+  Inbox,
+  Activity
 } from 'lucide-react';
 
 const navigation = [
@@ -25,6 +28,9 @@ const navigation = [
   { name: 'Alerts', href: '/alerts', icon: Bell },
   { name: 'Automation', href: '/automation', icon: Zap },
   { name: 'Analytics', href: '/analytics', icon: BarChart3 },
+  { name: 'Reports', href: '/reports', icon: FileText },
+  { name: 'Activity', href: '/activity', icon: Activity },
+  { name: 'Inbox', href: '/inbox', icon: Inbox },
   { name: 'Zones', href: '/zones', icon: Map },
   { name: 'Devices', href: '/devices', icon: Cpu },
   { name: 'Settings', href: '/settings', icon: Settings },
