@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScheduleModule } from '@nestjs/schedule';
+import { EventEmitterModule } from '@nestjs/event-emitter';
 
 // Feature modules
 import { AuthModule } from './modules/auth/auth.module';
@@ -16,6 +17,9 @@ import { WeatherModule } from './modules/weather/weather.module';
 import { AnalyticsModule } from './modules/analytics/analytics.module';
 import { MqttModule } from './modules/mqtt/mqtt.module';
 import { WebsocketModule } from './modules/websocket/websocket.module';
+import { NotificationsModule } from './modules/notifications/notifications.module';
+import { ReportsModule } from './modules/reports/reports.module';
+import { ActivityModule } from './modules/activity/activity.module';
 
 // Configuration
 import configuration from './config/configuration';
@@ -48,6 +52,9 @@ import configuration from './config/configuration';
     // Scheduler for cron jobs
     ScheduleModule.forRoot(),
 
+    // Event emitter for activity logging and notifications
+    EventEmitterModule.forRoot(),
+
     // Feature modules
     AuthModule,
     FarmsModule,
@@ -61,6 +68,9 @@ import configuration from './config/configuration';
     AnalyticsModule,
     MqttModule,
     WebsocketModule,
+    NotificationsModule,
+    ReportsModule,
+    ActivityModule,
   ],
 })
 export class AppModule {}

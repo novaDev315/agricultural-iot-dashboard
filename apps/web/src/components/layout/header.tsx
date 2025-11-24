@@ -46,9 +46,14 @@ export function Header() {
         {/* Right side */}
         <div className="flex items-center space-x-4">
           {/* Notifications */}
-          <button className="relative p-2 rounded-lg text-secondary-500 hover:bg-secondary-100">
+          <button
+            onClick={() => router.push('/inbox')}
+            className="relative p-2 rounded-lg text-secondary-500 hover:bg-secondary-100"
+          >
             <Bell className="h-5 w-5" />
-            <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
+            <span className="absolute -top-1 -right-1 h-5 w-5 bg-red-500 rounded-full flex items-center justify-center text-xs text-white font-medium">
+              3
+            </span>
           </button>
 
           {/* User menu */}
